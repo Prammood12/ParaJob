@@ -30,7 +30,7 @@ pipeline {
                   }
         }
 */
-    stage ('Install Java') {
+    stage ('Download Maven') {
             steps {
                 sh 'cd /var/lib/bin/jenkins'
                 sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_version/binaries/apache-maven-$Maven_Version-bin.tar.gz'
