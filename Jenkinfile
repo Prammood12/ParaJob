@@ -10,10 +10,10 @@ pipeline {
             steps {
                 sh 'cd /opt'
                 sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_Version/binaries/apache-maven-$Maven_Version-bin.tar.gz'
-                sh 'sudo tar xvf apache-maven-3.9.6-bin.tar.gz'
+                sh 'sudo tar xvf apache-maven-$Maven_Version-bin.tar.gz'
                 sh 'ls -ltr'
                 sh 'cd'
-                sh 'echo "export M2_HOME=/opt/apache-maven-3.9.6" >> .bash_profile'
+                sh 'echo "export M2_HOME=/opt/apache-maven-$Maven_Version" >> .bash_profile'
                 sh 'echo "export M2=$M2_HOME/bin" >> .bash_profile'
                 sh 'echo "export PATH=$M2:$PATH" >> .bash_profile'
                 sh 'source ~/.bash_profile'
