@@ -3,10 +3,11 @@ pipeline {
 
     parameters {
        string(name: 'Maven_Version', defaultValue: '3.9.2', description: 'Input the Maven version to download')
+       string(name: 'Java-Version', defaultValue: '17', description: 'Input the Java version to download')
     }
 
     stages{
-        stage ('Install Maven') {
+        /*stage ('Install Maven') {
             steps {
                 sh 'cd /opt'
                 sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_Version/binaries/apache-maven-$Maven_Version-bin.tar.gz'
@@ -21,6 +22,12 @@ pipeline {
 
             }
         }
-
+*/
+    stage ('Install Java') {
+            steps {
+                sh 'sudo dnf install java-$Java-Version-amazon-corretto'
+                sh 'sudo dnf install java-$Java-Version-amazon-corretto-devel'
+                  }
+        }
     }
 }
