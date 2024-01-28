@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-       string(name: 'Maven_Version', defaultValue: '3.9.2', description: 'Input the Maven version to download')
+      # string(name: 'Maven_Version', defaultValue: '3.9.2', description: 'Input the Maven version to download')
        string(name: 'Java_Version', defaultValue: '17', description: 'Input the Java version to download')
     }
 
