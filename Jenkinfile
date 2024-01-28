@@ -9,7 +9,7 @@ pipeline {
         stage ('Install Maven') {
             steps {
                 sh 'cd /opt'
-                sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_Version/binaries/apache-maven-3.9.6-bin.tar.gz'
+                sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_Version/binaries/apache-maven-$Maven_Version-bin.tar.gz'
                 sh 'sudo tar xvf apache-maven-3.9.6-bin.tar.gz'
                 sh 'ls -ltr'
                 sh 'cd'
