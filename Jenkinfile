@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    parameters {
+       string(name: 'Maven_Version', defaultValue: '3.9.2', description: 'Input the Maven version to download')
+    }
+
+    stages{
+        stage ('Install Maven') {
+            steps {
+                sh 'cd /opt'
+                sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz'
+                sh 'sudo tar xvf apache-maven-3.9.6-bin.tar.gz'
+                sh 'ls -ltr'
+                sh 'cd'
+                sh 'echo "export M2_HOME=/opt/apache-maven-3.9.6" >> .bash_profile'
+                sh 'echo "export M2=$M2_HOME/bin" >> .bash_profile'
+                sh 'echo "export PATH=$M2:$PATH" >> .bash_profile'
+                sh 'source ~/.bash_profile'
+                sh 'echo $M2_HOME'
+
+            }
+        }
+
+    }
+}
