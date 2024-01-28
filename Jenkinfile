@@ -22,12 +22,14 @@ pipeline {
 
             }
         }
-*/
+
     stage ('Install Java') {
             steps {
                 sh 'sudo dnf install java-$Java_Version-amazon-corretto'
                 sh 'sudo dnf install java-$Java_Version-amazon-corretto-devel'
                   }
         }
+*/
+
     }
 }
