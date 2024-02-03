@@ -22,17 +22,16 @@ pipeline {
 
             }
         }
-
-    stage ('Install Java') {
+*/
+      /*stage ('Install Java') {
             steps {
                 sh 'sudo dnf install java-$Java_Version-amazon-corretto'
                 sh 'sudo dnf install java-$Java_Version-amazon-corretto-devel'
                   }
-        }
+      }
 */
     stage ('Download Maven') {
             steps {
-
                 sh "sudo wget https://dlcdn.apache.org/maven/maven-3/${Maven_Version}/binaries/apache-maven-${Maven_Version}-bin.tar.gz"
                   }
         }
