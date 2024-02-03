@@ -32,7 +32,7 @@ pipeline {
 */
     stage ('Download Maven') {
             steps {
-                sh 'sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_version/binaries/apache-maven-$Maven_Version-bin.tar.gz'
+                sh "sudo wget https://dlcdn.apache.org/maven/maven-3/$Maven_version/binaries/apache-maven-$Maven_Version-bin.tar.gz"
                   }
         }
     }
